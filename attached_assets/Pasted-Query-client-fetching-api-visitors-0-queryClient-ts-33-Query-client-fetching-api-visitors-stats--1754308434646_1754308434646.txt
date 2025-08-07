@@ -1,0 +1,50 @@
+Query client fetching: /api/visitors/0
+queryClient.ts:33 Query client fetching: /api/visitors/stats/0
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+admin-new.tsx:290 Admin component state: ObjectdevicesCount: 4isLoading: false[[Prototype]]: Object
+admin-new.tsx:290 Admin component state: Object
+admin-new.tsx:290 Admin component state: Object
+admin-new.tsx:290 Admin component state: Object
+queryClient.ts:33 Query client fetching: /api/visitors/0
+queryClient.ts:33 Query client fetching: /api/visitors/stats/0
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+queryClient.ts:33 Query client fetching: /api/visitors/0
+queryClient.ts:33 Query client fetching: /api/visitors/stats/0
+queryClient.ts:33 Query client fetching: /api/visitors/1
+queryClient.ts:33 Query client fetching: /api/visitors/stats/1
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+queryClient.ts:33 Query client fetching: /api/visitors/stats/1
+queryClient.ts:33 Query client fetching: /api/visitors/1
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+queryClient.ts:43 Query response status: 200 Content-Type: text/html; charset=utf-8
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component state: {isLoading: false, devicesCount: 4}
+admin-new.tsx:290 Admin component s

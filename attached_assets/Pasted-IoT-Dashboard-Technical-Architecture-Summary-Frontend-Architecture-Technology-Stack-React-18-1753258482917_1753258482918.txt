@@ -1,0 +1,95 @@
+IoT Dashboard - Technical Architecture Summary
+Frontend Architecture
+Technology Stack:
+
+React 18 with TypeScript for type safety
+Vite as build tool with hot module replacement
+Wouter for lightweight client-side routing
+TanStack Query (React Query) for server state management with 2ms ultra-fast polling
+Tailwind CSS with custom glassmorphic dark theme design
+Radix UI + shadcn/ui for accessible component primitives
+Key Frontend Components:
+
+Dashboard: Main interface with tabs for connections, messages, topics, and publishing
+MQTT Connection Manager: Device configuration and connection status
+Real-time Message Monitor: Live MQTT message streaming with filtering
+Topic Manager: Subscription management and topic analytics
+Chart Components: Multiple visualization types (Chart.js, Nivo charts, Recharts)
+Admin Dashboard: User management and system monitoring
+Backend Architecture
+Core Technologies:
+
+Node.js with TypeScript and TSX for development
+Express.js web framework with security headers
+WebSocket Server for real-time bidirectional communication
+MQTT.js client library for broker connections
+Session Management with MySQL store and authentication middleware
+Backend Services:
+
+MQTT Service (server/services/mqtt.ts): Manages multiple broker connections
+MySQL Storage (server/mysql-storage.ts): Database operations with Drizzle ORM
+API Routes (server/routes.ts): RESTful endpoints with authentication
+WebSocket Handler: Real-time message broadcasting to connected clients
+Database Schema (MySQL + Drizzle ORM)
+Core Tables:
+
+users              - Authentication, roles, profiles, preferences
+mqtt_connections   - Broker configs (URL, port, protocol, auth, status)
+mqtt_topics        - Topic subscriptions per connection
+mqtt_messages      - All MQTT messages with payload and metadata
+topic_keys         - Analytics data for extracted JSON keys
+Data Relationships:
+
+Users → Connections (1:many) - User isolation for multi-tenant
+Connections → Topics (1:many) - Each connection can subscribe to multiple topics
+Connections → Messages (1:many) - All messages linked to source connection
+Automatic cleanup every 5 minutes to prevent database bloat
+Real-Time Data Flow
+MQTT → Database → WebSocket Pipeline:
+
+MQTT Broker → Server MQTT Client → MySQL Database → WebSocket → Frontend
+Real-Time Features:
+
+MQTT Connection: Server maintains persistent connections to multiple brokers
+Message Processing: Incoming messages stored in MySQL with JSON key extraction
+WebSocket Broadcasting: All messages instantly pushed to connected web clients
+Frontend Updates: React components receive live data without polling delays
+Ultra-Fast Polling: 2ms React Query intervals for non-WebSocket data
+Chart & Analytics System
+Multiple Chart Libraries:
+
+Chart.js: Real-time line charts, bar charts, doughnut charts for live MQTT data
+Nivo Charts: Advanced visualizations (calendar, heatmap, line) for admin analytics
+Recharts: Additional chart types for data trend analysis
+Analytics Features:
+
+Real-Time Data Processing: Extracts numeric values from JSON payloads
+Live Statistics: Messages per minute, peak values, topic distribution
+Historical Analytics: Time-series data with 24-hour patterns
+Admin Metrics: System health, user activity, connection statistics
+Security & Performance
+Security Measures:
+
+Role-Based Access Control: User/Admin roles with protected routes
+Session Authentication: MySQL session store with user status validation
+Input Validation: Zod schemas for all API endpoints
+Security Headers: XSS protection, content type options, frame options
+Performance Optimizations:
+
+Smart Caching: User activity data cached for 5 seconds
+Connection Pooling: Efficient MySQL connection management
+Message Cleanup: Automatic old message deletion to prevent bloat
+WebSocket Health: Ping/pong monitoring with automatic cleanup
+Development & Deployment
+Development Stack:
+
+Development: npm run dev with TSX for TypeScript execution
+Build: Vite frontend + ESBuild backend bundling
+Database: Direct MySQL connection with Drizzle migrations
+Port: Application runs on port 5000 with full-stack integration
+Project Structure:
+
+client/src/          - React frontend components and pages
+server/             - Express backend with services and routes  
+shared/schema.ts    - Shared TypeScript types and Zod validation
+This architecture provides a complete real-time IoT monitoring solution with user authentication, multi-tenant device management, live data visualization, and comprehensive admin controls.

@@ -1,0 +1,99 @@
+import { mysqlTable, varchar, int, boolean, timestamp, text } from "drizzle-orm/mysql-core";
+import { createInsertSchema } from "drizzle-zod";
+import { z } from "zod";
+
+export const users = mysqlTable("users", {
+  id: int("id").primaryKey().autoincrement(),
+  username: varchar("username", { length: 255 }).notNull().unique(),
+  password: varchar("password", { length: 255 }).notNull(),
+});
+
+export const devices = mysqlTable("devices", {
+  id: int("id").primaryKey().autoincrement(),
+  deviceId: varchar("device_id", { length: 255 }).notNull().unique(),
+  name: varchar("name", { length: 255 }).notNull(),
+  mqttBroker: varchar("mqtt_broker", { length: 255 }).notNull(),
+  mqttTopic: varchar("mqtt_topic", { length: 255 }).notNull(),
+  protocol: varchar("protocol", { length: 10 }).notNull().default("MQTT"), // MQTT, MQTTS, WS, WSS
+  username: varchar("username", { length: 255 }),
+  password: varchar("password", { length: 255 }),
+  status: varchar("status", { length: 50 }).notNull().default("offline"), // online, offline, waiting
+  lastSeen: timestamp("last_seen"),
+  isActive: boolean("is_active").notNull().default(true),
+});
+
+export const deviceData = mysqlTable("device_data", {
+  id: int("id").primaryKey().autoincrement(),
+  deviceId: varchar("device_id", { length: 255 }).notNull(),
+  timestamp: timestamp("timestamp").notNull().defaultNow(),
+  rawData: text("raw_data"), // JSON string of all sensor data
+});
+
+export const adminSettings = mysqlTable("admin_settings", {
+  id: int("id").primaryKey().autoincrement(),
+  settingKey: varchar("setting_key", { length: 100 }).notNull().unique(),
+  settingValue: text("setting_value").notNull(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+
+export const visitorLogs = mysqlTable("visitor_logs", {
+  id: int("id").primaryKey().autoincrement(),
+  ipAddress: varchar("ip_address", { length: 45 }).notNull(), // IPv6 support
+  userAgent: text("user_agent"),
+  browser: varchar("browser", { length: 100 }),
+  browserVersion: varchar("browser_version", { length: 50 }),
+  operatingSystem: varchar("operating_system", { length: 100 }),
+  country: varchar("country", { length: 100 }),
+  region: varchar("region", { length: 100 }),
+  city: varchar("city", { length: 100 }),
+  latitude: varchar("latitude", { length: 20 }),
+  longitude: varchar("longitude", { length: 20 }),
+  timezone: varchar("timezone", { length: 100 }),
+  isp: varchar("isp", { length: 255 }),
+  visitedPage: varchar("visited_page", { length: 500 }),
+  referrer: varchar("referrer", { length: 500 }),
+  sessionId: varchar("session_id", { length: 100 }),
+  visitTime: timestamp("visit_time").notNull().defaultNow(),
+});
+
+export const insertUserSchema = createInsertSchema(users).pick({
+  username: true,
+  password: true,
+});
+
+export const insertDeviceSchema = createInsertSchema(devices).omit({
+  id: true,
+  lastSeen: true,
+}).extend({
+  deviceId: z.string().min(1, "Device ID is required"),
+  name: z.string().min(1, "Device name is required"),
+  mqttBroker: z.string().min(1, "MQTT broker is required"),
+  mqttTopic: z.string().min(1, "MQTT topic is required"),
+  protocol: z.enum(["MQTT", "MQTTS", "WS", "WSS"]).default("MQTT"),
+});
+
+export const insertDeviceDataSchema = createInsertSchema(deviceData).omit({
+  id: true,
+  timestamp: true,
+});
+
+export const insertAdminSettingSchema = createInsertSchema(adminSettings).omit({
+  id: true,
+  updatedAt: true,
+});
+
+export const insertVisitorLogSchema = createInsertSchema(visitorLogs).omit({
+  id: true,
+  visitTime: true,
+});
+
+export type InsertUser = z.infer<typeof insertUserSchema>;
+export type User = typeof users.$inferSelect;
+export type Device = typeof devices.$inferSelect;
+export type InsertDevice = z.infer<typeof insertDeviceSchema>;
+export type DeviceData = typeof deviceData.$inferSelect;
+export type InsertDeviceData = z.infer<typeof insertDeviceDataSchema>;
+export type AdminSetting = typeof adminSettings.$inferSelect;
+export type InsertAdminSetting = z.infer<typeof insertAdminSettingSchema>;
+export type VisitorLog = typeof visitorLogs.$inferSelect;
+export type InsertVisitorLog = z.infer<typeof insertVisitorLogSchema>;

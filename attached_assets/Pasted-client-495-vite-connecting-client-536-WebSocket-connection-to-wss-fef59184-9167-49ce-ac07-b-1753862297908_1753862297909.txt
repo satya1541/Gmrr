@@ -1,0 +1,90 @@
+client:495 [vite] connecting...
+client:536 WebSocket connection to 'wss://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/?token=AOkWg2uBCqIi' failed: 
+setupWebSocket @ client:536
+client:536 Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'wss://localhost:undefined/?token=AOkWg2uBCqIi' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+react-dom.development.js:29895 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+admin:1 [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) <input data-replit-metadata=​"client/​src/​components/​pin-protection.tsx:​132:​14" data-component-name=​"Input" type=​"password" class=​"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:​border-0 file:​bg-transparent file:​text-sm file:​font-medium placeholder:​text-muted-foreground focus-visible:​outline-none focus-visible:​ring-2 focus-visible:​ring-ring focus-visible:​ring-offset-2 disabled:​cursor-not-allowed disabled:​opacity-50 text-center text-2xl tracking-widest font-mono" id=​"pin" placeholder=​"Enter 4-digit PIN" maxlength=​"4" value=​"1541">​
+admin.tsx:53 PIN authentication successful
+react-dom.development.js:86 Warning: React has detected a change in the order of Hooks called by Admin. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://reactjs.org/link/rules-of-hooks
+
+   Previous render            Next render
+   ------------------------------------------------------
+1. useState                   useState
+2. useState                   useState
+3. useState                   useState
+4. useState                   useState
+5. useState                   useState
+6. useContext                 useContext
+7. useContext                 useContext
+8. useContext                 useContext
+9. useEffect                  useEffect
+10. useState                  useState
+11. useCallback               useCallback
+12. useSyncExternalStore      useSyncExternalStore
+13. useEffect                 useEffect
+14. undefined                 useContext
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    at Admin (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/src/pages/admin.tsx:35:49)
+    at Route (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=c12325f3:323:16)
+    at Switch (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=c12325f3:379:17)
+    at div
+    at div
+    at AppContent
+    at Provider (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-56RHWAUR.js?v=c12325f3:58:15)
+    at TooltipProvider (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=c12325f3:56:5)
+    at QueryClientProvider (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=c12325f3:2805:3)
+    at App
+printWarning @ react-dom.development.js:86
+react-dom.development.js:15688 Uncaught Error: Rendered more hooks than during the previous render.
+    at updateWorkInProgressHook (react-dom.development.js:15688:13)
+    at updateEffectImpl (react-dom.development.js:16248:14)
+    at updateEffect (react-dom.development.js:16279:10)
+    at Object.useEffect (react-dom.development.js:17043:14)
+    at Object.useEffect (react.development.js:1634:21)
+    at useClearResetErrorBoundary (errorBoundaryUtils.ts:44:9)
+    at useBaseQuery (useBaseQuery.ts:70:3)
+    at useQuery (useQuery.ts:46:10)
+    at Admin (admin.tsx:61:64)
+    at renderWithHooks (react-dom.development.js:15486:18)
+react-dom.development.js:15688 Uncaught Error: Rendered more hooks than during the previous render.
+    at updateWorkInProgressHook (react-dom.development.js:15688:13)
+    at updateEffectImpl (react-dom.development.js:16248:14)
+    at updateEffect (react-dom.development.js:16279:10)
+    at Object.useEffect (react-dom.development.js:17043:14)
+    at Object.useEffect (react.development.js:1634:21)
+    at useClearResetErrorBoundary (errorBoundaryUtils.ts:44:9)
+    at useBaseQuery (useBaseQuery.ts:70:3)
+    at useQuery (useQuery.ts:46:10)
+    at Admin (admin.tsx:61:64)
+    at renderWithHooks (react-dom.development.js:15486:18)
+react-dom.development.js:18704 The above error occurred in the <Admin> component:
+
+    at Admin (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/src/pages/admin.tsx:35:49)
+    at Route (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=c12325f3:323:16)
+    at Switch (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=c12325f3:379:17)
+    at div
+    at div
+    at AppContent
+    at Provider (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-56RHWAUR.js?v=c12325f3:58:15)
+    at TooltipProvider (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=c12325f3:56:5)
+    at QueryClientProvider (https://fef59184-9167-49ce-ac07-b279bce3b546-00-uu9kyqkoppx1.sisko.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=c12325f3:2805:3)
+    at App
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ react-dom.development.js:18704
+react-dom.development.js:26962 Uncaught Error: Rendered more hooks than during the previous render.
+    at updateWorkInProgressHook (react-dom.development.js:15688:13)
+    at updateEffectImpl (react-dom.development.js:16248:14)
+    at updateEffect (react-dom.development.js:16279:10)
+    at Object.useEffect (react-dom.development.js:17043:14)
+    at Object.useEffect (react.development.js:1634:21)
+    at useClearResetErrorBoundary (errorBoundaryUtils.ts:44:9)
+    at useBaseQuery (useBaseQuery.ts:70:3)
+    at useQuery (useQuery.ts:46:10)
+    at Admin (admin.tsx:61:64)
+    at renderWithHooks (react-dom.development.js:15486:18)
