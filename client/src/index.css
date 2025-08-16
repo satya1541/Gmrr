@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom colors for IoT dashboard */
+  --success: hsl(122, 39%, 49%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --warning: hsl(38, 92%, 50%);
+  --warning-foreground: hsl(0, 0%, 100%);
+  --error: hsl(0, 72%, 51%);
+  --error-foreground: hsl(0, 0%, 100%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  --success: hsl(122, 39%, 49%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --warning: hsl(38, 92%, 50%);
+  --warning-foreground: hsl(0, 0%, 100%);
+  --error: hsl(0, 72%, 51%);
+  --error-foreground: hsl(0, 0%, 100%);
+}
+
+/* Custom animations for PIN protection */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Custom Intro.js Tour Styles */
+.customTooltip {
+  background: linear-gradient(135deg, hsl(207, 90%, 54%) 0%, hsl(270, 50%, 60%) 100%) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  color: white !important;
+  font-family: inherit !important;
+  max-width: 350px !important;
+}
+
+.customTooltip .introjs-tooltip-header {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.customTooltip .introjs-tooltiptext {
+  padding: 20px 24px 16px 24px !important;
+  line-height: 1.6 !important;
+  font-size: 15px !important;
+  color: white !important;
+}
+
+.customTooltip .introjs-tooltipbuttons {
+  padding: 0 24px 20px 24px !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.customTooltip .introjs-button {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-weight: 500 !important;
+  padding: 8px 20px !important;
+  margin-left: 8px !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(10px) !important;
+  min-width: 80px !important;
+  white-space: nowrap !important;
+}
+
+.customTooltip .introjs-button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  transform: translateY(-1px) !important;
+}
+
+.customTooltip .introjs-nextbutton {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: hsl(207, 90%, 54%) !important;
+  border: none !important;
+  min-width: 90px !important;
+}
+
+.customTooltip .introjs-nextbutton:hover {
+  background: white !important;
+  transform: translateY(-1px) !important;
+}
+
+.customTooltip .introjs-skipbutton {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  min-width: 70px !important;
+}
+
+.customTooltip .introjs-skipbutton:hover {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.customTooltip .introjs-progressbar {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-radius: 10px !important;
+  margin: 0 24px 16px 24px !important;
+  height: 4px !important;
+}
+
+.customTooltip .introjs-progress {
+  background: white !important;
+  border-radius: 10px !important;
+}
+
+.customHighlight {
+  border: 3px solid hsl(207, 90%, 54%) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6), 0 0 30px rgba(24, 144, 255, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+.introjs-overlay {
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(2px) !important;
+}
+
+.introjs-helperLayer {
+  border-radius: 8px !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-success {
+    color: var(--success);
+  }
+  
+  .text-warning {
+    color: var(--warning);
+  }
+  
+  .text-error {
+    color: var(--error);
+  }
+  
+  .bg-success {
+    background-color: var(--success);
+  }
+  
+  .bg-warning {
+    background-color: var(--warning);
+  }
+  
+  .bg-error {
+    background-color: var(--error);
+  }
+
+  .bg-success\/10 {
+    background-color: hsl(from var(--success) h s l / 0.1);
+  }
+  
+  .bg-warning\/10 {
+    background-color: hsl(from var(--warning) h s l / 0.1);
+  }
+  
+  .bg-error\/10 {
+    background-color: hsl(from var(--error) h s l / 0.1);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
