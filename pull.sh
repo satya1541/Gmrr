@@ -12,6 +12,6 @@ echo "⚙️ Building project..."
 npm run build
 
 echo "🚀 Restarting PM2 process..."
-pm2 restart 0
+pm2 restart all
 
 echo "✅ Deployment complete!"
