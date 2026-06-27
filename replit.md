@@ -141,7 +141,7 @@ The application follows a full-stack architecture with clear separation between 
     - Professional color scheme with blue/purple gradients for actions and red for danger zones.
     - Full light/dark mode support optimized for glassmorphic effects.
     - Responsive design for dashboard and admin pages, utilizing adaptive grid layouts and mobile-friendly components.
-    - Branding badge "Powered by Clino Health Innovation", clickable and redirects to https://www.clinohealthinnovation.com/.
+    - Branding badge "Powered by Clino Health Innovation", clickable and redirects to https://clinohealthinnovation.com/.
 - **Components**: Radix UI with shadcn/ui styling, Tailwind CSS for theming.
 - **State Management**: TanStack Query for server state.
 - **Routing**: Wouter for client-side routing.

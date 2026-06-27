@@ -5,7 +5,7 @@ export function BrandingBadge() {
   return (
     <div className="fixed bottom-4 right-4 z-40">
       <a 
-        href="https://www.clinohealthinnovation.com/" 
+        href="https://clinohealthinnovation.com/" 
         target="_blank" 
         rel="noopener noreferrer"
         className="focus:outline-none"

@@ -2,30 +2,35 @@ import mysql from "mysql2/promise";
 import { drizzle } from "drizzle-orm/mysql2";
 import * as schema from "@shared/schema";
 
-// Create connection function
-async function createConnection() {
+// Create connection pool
+function createPool() {
   try {
-    const connection = await mysql.createConnection({
+    const pool = mysql.createPool({
       host: "40.192.42.60",
       port: 3306,
       user: "testing",
       password: "testing@2025",
       database: "gmr_db",
+      waitForConnections: true,
+      connectionLimit: 10,
+      queueLimit: 0,
+      enableKeepAlive: true,
+      keepAliveInitialDelay: 0
     });
-    console.log("Connected to MySQL database");
-    return connection;
+    console.log("Connected to MySQL database using connection pool");
+    return pool;
   } catch (error) {
     console.error("Database connection failed:", error);
     throw error;
   }
 }
 
-// Initialize connection
-const connection = await createConnection();
+// Initialize connection pool
+const pool = createPool();
 
 async function ensureOfflineEventsTable() {
   try {
-    await connection.execute(`
+    await pool.execute(`
       CREATE TABLE IF NOT EXISTS device_offline_events (
         id INT AUTO_INCREMENT PRIMARY KEY,
         device_id VARCHAR(255) NOT NULL,
@@ -42,5 +47,7 @@ async function ensureOfflineEventsTable() {
 
 await ensureOfflineEventsTable();
 
-export const db = drizzle(connection, { schema, mode: "default" });
-export { connection };
+export const db = drizzle(pool, { schema, mode: "default" });
+// We export the pool as connection for compatibility with other files that might import it
+export const connection = pool;
+
